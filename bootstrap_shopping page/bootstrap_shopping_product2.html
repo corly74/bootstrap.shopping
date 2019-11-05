@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d038f356df.js"></script>
+
+    <style>
+        body {
+            font-family: Microsoft JhengHei;
+        }
+
+        .btn-cart {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .btn-cart .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .btn-primary-chart {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .btn-primary-chart:hover {
+            background-color: #7beadf;
+            box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
+            color: #000000 !important;
+        }
+
+        .text-pink {
+            color: #40E0D0 !important;
+        }
+
+        .bg-tiffany {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+
+        .bg-tiffany:hover {
+            background-color: #7beadf !important;
+            border: #7beadf !important;
+            color: #000000 !important;
+        }
+
+        .dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .jumbotron-bg {
+            background-image: url(https://otherplanet.photo/wp-content/uploads/2018/02/diamond-jewelry-group-arrangement-with-ribbon-in-pinkish-tones.jpg);
+            background-size: cover;
+            background-position: center center;
+            min-height: 400px;
+        }
+
+        .bg-ligter {
+            background-color: rgba(64, 224, 208, .41);
+
+        }
+
+        @media (min-width: 576px) {
+            .card-pic {
+                height: 170px;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+
+        .box-shadow {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .17);
+            transition: box-shadow .3s;
+        }
+
+        .box-shadow:hover {
+            box-shadow: 0 3px 10px rgba(64, 224, 208, .50);
+        }
+
+        .btn-hover:hover {
+            background-color: #7beadf;
+            color: #000000 !important;
+            border: 0;
+        }
+
+        .gold {
+            font-size: 24px;
+            width: 350px;
+            line-height: 1.5;
+        }
+
+        .text-w {
+            width: 300px;
+        }
+
+        .discount {
+            font-size: 26px;
+        }
+
+        .hr-g {
+            margin-top: 0;
+            width: 300px;
+            height: .1em;
+        }
+
+
+        .product-w {
+            width: 100px;
+        }
+
+        .seclectw {
+            width: 180px;
+        }
+
+        @media (max-width: 576px) {
+            .sm-right {
+                margin-right: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <i class="fas fa-gem  fa-2x mr-2 text-pink"></i>
+        <a class="navbar-brand text-pink" href="#">FoeverDiamond</a>
+
+        <!-- header navbar 右上角購物車 含icon 數量badge-->
+        <div class="dropdown ml-auto">
+            <button type="button" class="btn btn-sm btn-cart " data-toggle="dropdown" data-flip="false">
+                <i class="fas fa-shopping-cart fa-2x"></i> <!-- btn-cart另外下背景透明class,右上角購物車icon只占空間無底色 -->
+                <!-- 設計稿cart icon和badge是有一點重疊的,但是在html裡兩個都有佔空間無法重疊,需要用position絕對定位-->
+                <!-- 記得要去最上一層btn-cart裡面下relative-->
+                <span class="badge badge-pill badge-danger">12</span>
+            </button>
+            <!-- dropdown-menu會自己計算空間不要跑出框架外,但在navbar除外,所以要自己另外下class-->
+            <div class="dropdown-menu text-secondary dropdown-menu-right" style="min-width:500px">
+                <form class="px-4 py-3">
+                    <h6>已選購商品</h6>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">刪除商品</th>
+                                <th scope="col">品項</th>
+                                <th scope="col">數量</th>
+                                <th scope="col">價格</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class=" text-secondary d-flex justify-content-center"><i class="fas fa-trash-alt"
+                                        data-toggle="modal" data-target="#removeModal" data-title="八星八箭0.1ct鑽純銀戒指"
+                                        data-backdrop="static"" href=" #"></i></td>
+                                <td>八星八箭0.1ct鑽純銀戒指</td>
+                                <td>1</td>
+                                <td class="justify-content-right">$7880</td>
+                            </tr>
+                            <tr>
+                                <td class=" text-secondary d-flex justify-content-center"><i class="fas fa-trash-alt"
+                                        data-toggle="modal" data-target="#removeModal" data-title="貓眼石玫瑰金可調式手環"
+                                        data-backdrop="static"" href=" #"></i></td>
+                                <td>貓眼石玫瑰金可調式手環</td>
+                                <td>1</td>
+                                <td class="justify-content-right">$4880</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- bootstrap使用按鈕連結網頁語法 下方須貼js-->
+                    <a href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_cheakout.html?"
+                        id="DownLoadAudio" target="_blank">
+                        <button id="Submit6" class="btn btn-sm btn-primary-chart btn-block text-white" type="button"
+                            onclick="openWin(@item.UserID,@item.AudioID)">
+                            <i class="glyphicon glyphicon-download-alt"></i>結帳</button></a>
+
+
+
+            </div>
+    </nav>
+    <!--Model 刪除Model -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    是否確認刪除訂單
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消刪除</button>
+                    <button type="button" class="btn btn-outline-danger">確認刪除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 動態廣告bannar--電商網站注重SEO,所以只能有一個H1,通常放在商品名稱,BANNAR的H1要拿掉-->
+    <!-- d-flex align-items-end改變字體位置-->
+    <div class="jumbotron jumbotron-fluid jumbotron-bg d-flex align-items-end">
+        <div class="container">
+            <div class="bg-ligter py-3 pl-3 text-center">
+                <h2 class="display-4">白色聖誕節寶石季</h2>
+                <p class="lead">以歐美風首飾為主,亦有小量民俗風(吉普賽.南美洲原住民飾品),人工寶石,天然寶石,水晶,高級訂製珠寶</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="demo">
+            <nav class="breadcrumb bg-white pl-0">
+                <!-- pl-0對齊左邊-->
+                <a class="breadcrumb-item" href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping%202.html"target="_blank">Home</a>
+                <a class="breadcrumb-item" href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping%202.html#pane-1">品牌珠寶</a>
+                <a class="breadcrumb-item" href="#">24k金</a>
+                <a class="breadcrumb-item active">雅典娜手鍊</as>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="sticky-top">
+                    <h1 class="gold">Athens 24k Golden Bracelet</h1>
+                    <div class="d-flex justify-content-between text-w align-items-baseline ">
+                        <span class=" text-secondary">售價$12,800</span>
+                        <span class="discount text-danger font-weight-bold">聖誕優惠$8,800</span>
+
+                    </div>
+                    <hr class="hr-g">
+                    <div class="d-flex ">
+                        <p class="pr-3 mt-2 h5">size</p>
+
+                        <div class="btn-group btn-group-sm " role="group" aria-label="Basic example">
+
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip"
+                                data-placement="top" title="適合15-16cm的腕圍">17cm</button>
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip"
+                                data-placement="top" title="適合17-18cm的腕圍">19cm</button>
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip"
+                                data-placement="top" title="適合19-20cm的腕圍">21cm</button>
+                        </div>
+
+                    </div>
+                    <div class="d-flex ">
+                        <div class="input-group  pt-3 ">
+                            <select class="custom-select col-lg-8 " id="inputGroupSelect04"
+                                aria-label="Example select with button addon">
+                                <option selected>Choose...</option>
+                                <option value="1">One pices</option>
+                                <option value="2">Two pices</option>
+                                <option value="3">Three pices</option>
+                            </select>
+
+                        </div>
+
+
+
+                    </div>
+                    <div>
+
+                        <a href="#" id="DownLoadAudio" target="_blank">
+                            <button id="Submit6" class="btn col-sm-4 mt-2 btn-primary-chart btn-hover" type="button"
+                                onclick="openWin(@item.UserID,@item.AudioID)">
+                                <i class="glyphicon glyphicon-download-alt"></i>加入購物車</button></a>
+
+
+                        <a href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_cheakout.html?"
+                            id="DownLoadAudio" target="_blank">
+                            <button id="Submit6" class="btn  col-sm-4  mt-2 btn-danger" type="button"
+                                onclick="openWin(@item.UserID,@item.AudioID)">
+                                <i class="glyphicon glyphicon-download-alt"></i>快速結帳</button></a>
+
+
+                    </div>
+
+
+                    <div class="card-group d-flex flex-lg-column  mt-3 sm-right  ">
+                        <div class="card mb-2 product-w ">
+                            <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8594/large/Moving_Oval_Bracelet2.png?1564427851"
+                                class="card-img-top " alt="..." onclick="myFunction(this);">
+
+                        </div>
+                        <div class="card mb-2 product-w">
+                            <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8595/large/2019-08-05-Moving_Oval-Studio-Elyse-Bracelet_Single_Close.jpg?1564427921"
+                                class="card-img-top" alt="..." onclick="myFunction(this);">
+
+                        </div>
+
+                        <div class="card mb-2 product-w">
+                            <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8596/large/2019-08-05-Moving_Oval-Studio-Elyse-Bracelet_Single.jpg?1564427932"
+                                class="card-img-top" alt="..." onclick="myFunction(this);">
+
+                        </div>
+
+                        <div class="card mb-2 product-w">
+                            <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8597/large/2019-08-05-Moving_Oval-Studio-Elyse-Bracelet_Stacked.jpg?1564427944"
+                                class="card-img-top" alt="..." onclick="myFunction(this);">
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-8 ">
+                <div class="container play">
+                    <div class="card-group sm-right ">
+                        <div class="card ">
+                            <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8594/large/Moving_Oval_Bracelet2.png?1564427851"
+                                class="card-img-top  " alt="..." onclick="this.parentElement.style.display='none'"
+                                id="expandedImg">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                crossorigin="anonymous"></script>
+
+            <div class="demo">
+                <script>
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                    })
+                </script>
+
+                <script>
+                    function myFunction(imgs) {
+                        var expandImg = document.getElementById("expandedImg");
+                        var imgText = document.getElementById("imgtext");
+                        expandImg.src = imgs.src;
+                        imgText.innerHTML = imgs.alt;
+                        expandImg.parentElement.style.display = "block";
+                    }
+                </script>
+                <!-- bootstrap使用按鈕連結網頁js-->
+                <script type="text/javascript">
+                    function openWin(userid, audioid) {
+                        var obj = document.getElementById("DownLoadAudio");
+                        obj.href = data.state;
+                        obj.click();
+                    }
+                </script>
+
+                <script>// 刪除 Modal 的script
+                    $(document).ready(function () {
+
+
+                        // 編輯的 Modal 事件 當#editModal被點擊必須去找到是哪一個btn去觸發,並將這個btn的deta title屬性取出來,寫在modal-title地方
+                        $('#removeModal').on('show.bs.modal', function (event) {
+                            var btn = $(event.relatedTarget);
+
+                            var title = btn.data('title')
+
+                            var model = $(this);
+                            model.find('.modal-title').text('確認刪除' + title)// '文字'+title=在title前面加上文字
+                        });
+
+                        $('#removeModal').on('show.bs.modal', function (event) {
+
+                        })
+                    });
+                </script>
+</body>
+
+</html>

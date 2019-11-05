@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoeverDiamond</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d038f356df.js"></script>
+    <style>
+        body {
+            font-family: Microsoft JhengHei;
+        }
+
+        .btn-cart {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .btn-cart .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .btn-primary-chart {
+            background-color: #000000;
+
+        }
+
+        .btn-primary-chart:hover {
+            background-color: #7beadf;
+            box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
+            color: #000000 !important;
+        }
+
+        .text-pink {
+            color: #40E0D0 !important;
+        }
+
+        .bg-tiffany {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+
+        .bg-tiffany:hover {
+            background-color: #7beadf !important;
+            ;
+            border: #7beadf !important;
+            color: #000000 !important;
+        }
+
+        .dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .jumbotron-bg {
+            background-image: url(https://otherplanet.photo/wp-content/uploads/2018/02/diamond-jewelry-group-arrangement-with-ribbon-in-pinkish-tones.jpg);
+            background-size: cover;
+            background-position: center center;
+            min-height: 400px;
+        }
+
+        .bg-ligter {
+            background-color: rgba(64, 224, 208, .41);
+
+        }
+
+        @media (min-width: 576px) {
+            .card-pic {
+                height: 170px;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+
+        .box-shadow {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .17);
+            transition: box-shadow .3s;
+        }
+
+        .box-shadow:hover {
+            box-shadow: 0 3px 10px rgba(64, 224, 208, .50);
+        }
+
+        .btn-hover:hover {
+            background-color: #7beadf;
+            color: #000000 !important;
+        }
+
+        .btn .disabled {
+            pointer-events: none;
+        }
+
+        .btn-f {
+            border-radius: 0;
+        }
+
+        .btn-f:hover {
+            background-color: #7beadf;
+            border: none;
+            color: black;
+        }
+
+        .show{
+            display: block;
+        }
+
+        /* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-md-4{
+    display: none; /* Hide all elements by default */
+}
+
+.show {
+  display: block;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- .btn .disabled {pointer-events: none;} 滑鼠無法點擊已經關閉選項 -->
+
+    <!-- header navbar -->
+
+    <nav class="navbar navbar-light bg-light">
+        <i class="fas fa-gem  fa-2x mr-2 text-pink"></i>
+        <a class="navbar-brand text-pink" href="#">FoeverDiamond</a>
+
+        <!-- header navbar 右上角購物車 含icon 數量badge-->
+        <div class="dropdown ml-auto">
+            <button type="button" class="btn btn-sm btn-cart " data-toggle="dropdown" data-flip="false">
+                <i class="fas fa-shopping-cart fa-2x"></i> <!-- btn-cart另外下背景透明class,右上角購物車icon只占空間無底色 -->
+                <!-- 設計稿cart icon和badge是有一點重疊的,但是在html裡兩個都有佔空間無法重疊,需要用position絕對定位-->
+                <!-- 記得要去最上一層btn-cart裡面下relative-->
+                <span class="badge badge-pill badge-danger">12</span>
+            </button>
+            <!-- dropdown-menu會自己計算空間不要跑出框架外,但在navbar除外,所以要自己另外下class-->
+            <div class="dropdown-menu text-secondary dropdown-menu-right" style="min-width:500px">
+                <form class="px-4 py-3">
+                    <h6>已選購商品</h6>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">刪除商品</th>
+                                <th scope="col">品項</th>
+                                <th scope="col">數量</th>
+                                <th scope="col">價格</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class=" text-secondary d-flex justify-content-center"><i class="fas fa-trash-alt"
+                                        data-toggle="modal" data-target="#removeModal" data-title="八星八箭0.1ct鑽純銀戒指"
+                                        data-backdrop="static"" href=" #"></i></td>
+                                <td>八星八箭0.1ct鑽純銀戒指</td>
+                                <td>1</td>
+                                <td class="justify-content-right">$7880</td>
+                            </tr>
+                            <tr>
+                                <td class=" text-secondary d-flex justify-content-center"><i class="fas fa-trash-alt"
+                                        data-toggle="modal" data-target="#removeModal" data-title="貓眼石玫瑰金可調式手環"
+                                        data-backdrop="static"" href=" #"></i></td>
+                                <td>貓眼石玫瑰金可調式手環</td>
+                                <td>1</td>
+                                <td class="justify-content-right">$4880</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <a href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_cheakout.html?"
+                        id="DownLoadAudio" target="_blank">
+                        <button id="Submit6" class="btn btn-sm btn-primary-chart btn-block text-white" type="button"
+                            onclick="openWin(@item.UserID,@item.AudioID)">
+                            <i class="glyphicon glyphicon-download-alt"></i>結帳</button></a>
+                </form>
+
+            </div>
+    </nav>
+
+    <!--Model 刪除Model -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    是否確認刪除訂單
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消刪除</button>
+                    <button type="button" class="btn btn-outline-danger">確認刪除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 動態廣告bannar-->
+    <!-- d-flex align-items-end改變字體位置-->
+    <div class="jumbotron jumbotron-fluid jumbotron-bg d-flex align-items-end">
+        <div class="container">
+            <div class="bg-ligter py-3 pl-3 text-center">
+                <h1 class="display-4">白色聖誕節寶石季</h1>
+                <p class="lead">以歐美風首飾為主,亦有小量民俗風(吉普賽.南美洲原住民飾品),人工寶石,天然寶石,水晶,高級訂製珠寶</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 主要內容,左欄選單,右欄商品主頁-->
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="list-group sticky-top ">
+                    <a href="#pane-1" class="list-group-item list-group-item-action active bg-tiffany active"
+                        data-toggle="list" role="tab">
+                        品牌珠寶
+                    </a>
+                    <a href="#pane-4" class="list-group-item list-group-item-action bg-tiffany" data-toggle="list"
+                        role="tab">流行飾品<span class="badge badge-pill badge-danger ml-1">新貨到</span></a>
+                    <a href="#pane-2" class="list-group-item list-group-item-action bg-tiffany"
+                        data-toggle="list">彩色寶石</a>
+                    <a href="#pane-3" class="list-group-item list-group-item-action bg-tiffany" data-toggle="list"
+                        role="tab">訂婚/結婚戒指</a>
+
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
+                        aria-disabled="true">訂製珠寶</a>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-9">
+                <!-- card-deck無法固定固定col,多的不會跳到下一行,所以不適合做商品展示用-->
+
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pane-1" role="tabpanel">
+
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://media.boodles.com/wp/uploads/2017/07/raindance-780x802.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">仿生系列</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This content is a little bit longer.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover"
+                                            href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html"
+                                            role="button" target="_blank">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="https://i0.wp.com/www.studiodog.co.uk/wp-content/uploads/2017/04/Studio-Dog-Jewellery-Photography-17.jpg?resize=1170%2C585&ssl=1"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">輕珠寶</h5>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to
+                                            additional content.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover"
+                                            href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html"
+                                            target="_blank" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="http://www.kunaldaswani.com/wp-content/uploads/2018/01/01_Kunal-Daswani-Photography_Product.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">金色奇蹟</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This card has even longer content than the first to show that equal
+                                            height action.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white text-center">
+                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                            <a class="btn btn-primary-chart text-white disabled" href="#" role="button"
+                                                target="_blank"><small>玫瑰金</small></a>
+                                            <a class="btn btn-primary-chart text-white btn-hover "
+                                                href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html#"
+                                                role="button" target="_blank"><small>古銅金</small></a>
+                                            <a class="btn btn-primary-chart text-white btn-hover "
+                                                href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html#"
+                                                role="button" target="_blank"><small>24k金</small></a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="https://i2.wp.com/www.studiodog.co.uk/wp-content/uploads/2017/04/Studio-Dog-Jewellery-Photography-14.jpg?resize=1170%2C1170&ssl=1"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">純銀天使</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This card has even longer content than the first to show that equal
+                                            height action.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover"
+                                            href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html"
+                                            target="_blank" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="tab-pane" id="pane-2" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQvWghIO5nCuPzU-JG4UCeBKaxUdrkVF_oYnnfjDesUW_tFgmWH"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This content is a little bit longer.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#"
+                                            role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="https://ecommercephotographyindia.com/assets/img/gallery/main/jewel/8.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to
+                                            additional content.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#"
+                                            role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="http://www.thejewelleryeditor.com/media/images_thumbnails/filer_public_thumbnails/filer_public/ed/2f/ed2f0c71-9e9a-4da8-8de5-747b02ec6616/boodles_multi-gem_collar_prism_collection.jpg__1536x0_q75_crop-scale_subsampling-2_upscale-false.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This card has even longer content than the first to show that equal
+                                            height action.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white text-center">
+                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                            <a class="btn btn-primary-chart text-white disabled"
+                                                href="#"><small>Eu#3</small></a>
+                                            <a class="btn btn-primary-chart text-white  btn-hover"
+                                                href="#"><small>Eu#4</small></a>
+                                            <a class="btn btn-primary-chart text-white  btn-hover"
+                                                href="#"><small>Eu#5</small></a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="http://www.thejewelleryeditor.com/media/images_thumbnails/filer_public_thumbnails/filer_public/e2/2e/e22e57e0-4717-4d5d-a58e-24ed1b2ce622/boodles-wisteria-ring.jpg__1536x0_q75_crop-scale_subsampling-2_upscale-false.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This card has even longer content than the first to show that equal
+                                            height action.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#"
+                                            role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="tab-pane" id="pane-3" role="tabpanel">
+
+
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://image.brilliantearth.com/media/base_product_center_diamond_images/SH/BE1D0681_Claw%20Prong_Round_white_carat_75.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This content is a little bit longer.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#"
+                                            role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="https://barkevs.r.worldssl.net/media/catalog/product/8/0/8077l_top_front.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to
+                                            additional content.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white text-center">
+                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                            <a class="btn btn-primary-chart text-white btn-hover"
+                                                href="#"><small>0.5ct</small></a>
+                                            <a class="btn btn-primary-chart text-white  btn-hover"
+                                                href="#"><small>0.75ct</small></a>
+                                            <a class="btn btn-primary-chart text-white  btn-hover"
+                                                href="#"><small>1.0ct</small></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="https://media.turgeonraine.com/app/uploads/2018/01/05155629/RDCU404079-1-1.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This card has even longer content than the first to show that equal
+                                            height action.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white text-center">
+                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                            <a class="btn btn-primary-chart text-white disabled"
+                                                href="#"><small>Eu#3</small></a>
+                                            <a class="btn btn-primary-chart text-white  btn-hover"
+                                                href="#"><small>Eu#4</small></a>
+                                            <a class="btn btn-primary-chart text-white  btn-hover"
+                                                href="#"><small>Eu#5</small></a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card  h-100 box-shadow">
+                                    <img src="http://www.14karatomaha.com/wp-content/uploads/2014/07/SY289-PEAR-e1407360970714.jpg"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional
+                                            content. This card has even longer content than the first to show that equal
+                                            height action.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#"
+                                            role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane" id="pane-4" role="tabpanel">
+                        <p class="h1 font-weight-bold">流行飾品</p>
+                        <div class="myBtn container row">
+                            <div class=""><button type="button" class="btn btn-dark btn-f mr-2 px-4 active show" onclick="filterSelection('all')">全部</button>
+                            </div>
+                            <div class=""><button type="button" class="btn btn-secondary btn-f mr-2 px-4" onclick="filterSelection('ring')">戒指</button>
+                            </div>
+                            <div class=""><button type="button" class="btn btn-secondary btn-f mr-2 px-4" onclick="filterSelection('necklace')">項鍊</button>
+                            </div>
+                            <div class=""><button type="button" class="btn btn-secondary btn-f mr-2 px-4" onclick="filterSelection('ear')">耳環</button>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-4">
+                            <div class="col-md-4 mb-4 ring">
+
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8047/large/feature-ring-green-topaz-cc.png?1559673370"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Feature Ring</h5>
+                                        <p class="card-text">瑞士最高等級實驗室寶石,媲美鑽石切工,維持更久亮度,純銀電鍍抗敏材質.</p>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#"
+                                            role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 necklace">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8466/large/boyfriend-necklace-cc-v2.png?1562615956"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Wedjat Necklace</h5>
+                                        <p class="card-text">和魯斯之眼,神秘度100,純銀電鍍18k不易退色.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 ring">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8065/large/mini-boss-signet-green-amethyst-cc.png?1559676534"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">The lady</h5>
+                                        <p class="card-text">大氣灰色方寶石,剛柔並濟現代都會女子,展現你的堅毅.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 necklace">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/7976/large/pave-heart-necklace-cc.png?1559664341"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Pure love Necklace</h5>
+                                        <p class="card-text">office lady婉約氣質,休閒戶外百搭款,密鑽設計,電鍍金項鍊.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 ear">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8158/large/organic-pearl-hoops-cc.png?1559933502"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Organic Pearl Earring </h5>
+                                        <p class="card-text">天然無打磨珍珠,呈現最原始樣貌,每一對都是獨一無二,世界上絕無第二副撞款,純銀電鍍金防過敏不易掉色.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 ear">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/7830/large/cabochon-studs-cc.png?1559653910"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Lazurite Earring</h5>
+                                        <p class="card-text">市面上少見青金石耳針款,不張狂的低調復古,品味UPUP.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 necklace">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/7930/large/diamond-necklace-cc.png?1559658908"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Diamond Necklace</h5>
+                                        <p class="card-text">每個女人必備單鑽項鍊,貴氣上身,尊貴典雅,讓人不寵愛妳都不行.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 ring">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8430/large/Wave_Ring_Blue-Side2.png?1561571928"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Dewdrop Wave Ring</h5>
+                                        <p class="card-text">追加不斷纏繞式戒指,今年最HOT綠色輕寶石款,FOEVER DIAMOND總是流行快一步.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4 ear">
+                            
+                                <div class="card  h-100 box-shadow ">
+                                    <!--h-100 不管內文多長,所有card高度對齊-->
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/6320/large/XLhoops.png?1546532178"
+                                        class="card-img-top card-pic" alt="...">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Oversized Thin Hoops</h5>
+                                        <p class="card-text">狂野大環耳環,性感有型必須投資,路上妳最吸睛.</p>
+                            
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <!-- border-top-0把footer裡分隔線去除掉-->
+                                        <a class="btn btn-primary-chart btn-block text-white btn-hover" href="#" role="button">購買去</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('#removeModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // 選則當初觸發事件的按鈕
+            var title = button.data('title') // 使用 data-* 來取得特定內容
+
+            var modal = $(this)
+            modal.find('.modal-title').text('確認' + title) // 寫入資料
+        })
+    });
+
+    $('myList').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>
+
+
+
+<script>
+    $(function () {
+        $('#myList a:last-child').tab('show')
+    })
+</script>
+<!-- bootstrap使用按鈕連結網頁js-->
+<script type="text/javascript">
+    function openWin(userid, audioid) {
+        var obj = document.getElementById("DownLoadAudio");
+        obj.href = data.state;
+        obj.click();
+    }
+</script>
+
+<script>// 刪除 Modal 的script
+    $(document).ready(function () {
+
+
+        // 編輯的 Modal 事件 當#editModal被點擊必須去找到是哪一個btn去觸發,並將這個btn的deta title屬性取出來,寫在modal-title地方
+        $('#removeModal').on('show.bs.modal', function (event) {
+            var btn = $(event.relatedTarget);
+
+            var title = btn.data('title')
+
+            var model = $(this);
+            model.find('.modal-title').text('確認刪除' + title)// '文字'+title=在title前面加上文字
+        });
+
+        $('#removeModal').on('show.bs.modal', function (event) {
+
+        })
+    });
+</script>
+
+<!-- Portfolio Gallery with Filtering切換不同分類照片-->
+<script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("col-md-4");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+
+</body>
+
+</html>

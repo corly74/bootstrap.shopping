@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d038f356df.js"></script>
+
+    <style>
+    body {
+            font-family: Microsoft JhengHei;
+        }
+
+        .btn-cart {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .btn-cart .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .btn-primary-chart {
+            background-color: #000000;
+
+        }
+
+        .btn-primary-chart:hover {
+            background-color: #7beadf;
+            box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
+            color: #000000 !important;
+        }
+
+        .text-pink {
+            color: #40E0D0 !important;
+        }
+
+        .bg-tiffany {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+
+        .bg-tiffany:hover {
+            background-color: #7beadf !important;
+            ;
+            border: #7beadf !important;
+            color: #000000 !important;
+        }
+
+        .dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .jumbotron-bg {
+            background-image: url(https://otherplanet.photo/wp-content/uploads/2018/02/diamond-jewelry-group-arrangement-with-ribbon-in-pinkish-tones.jpg);
+            background-size: cover;
+            background-position: center center;
+            min-height: 400px;
+        }
+
+        .bg-ligter {
+            background-color: rgba(64, 224, 208, .41);
+
+        }
+
+        @media (min-width: 576px) {
+            .card-pic {
+                height: 170px;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+
+        .box-shadow {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .17);
+            transition: box-shadow .3s;
+        }
+
+        .box-shadow:hover {
+            box-shadow: 0 3px 10px rgba(64, 224, 208, .50);
+        }
+
+        .btn-hover:hover {
+            background-color: #7beadf;
+            color: #000000 !important;
+            border: 0;
+        }
+
+        .gold{
+         font-size: 24px;
+         width: 350px;
+         line-height: 1.5;
+        }
+
+        .text-w{
+            width: 300px;
+        }
+
+        .discount{
+            font-size: 26px;
+        }
+
+        .hr-g{
+            margin-top: 0;
+            width: 300px;
+            height: .1em;
+           
+        }
+
+        .ww{width:200px;}
+    </style>
+</head>
+<body>
+    
+<nav class="navbar navbar-light bg-light">
+    <i class="fas fa-gem  fa-2x mr-2 text-pink"></i>
+    <a class="navbar-brand text-pink" href="#">FoeverDiamond</a>
+
+    <!-- header navbar 右上角購物車 含icon 數量badge-->
+    <div class="dropdown ml-auto">
+        <button type="button" class="btn btn-sm btn-cart " data-toggle="dropdown" data-flip="false">
+            <i class="fas fa-shopping-cart fa-2x"></i> <!-- btn-cart另外下背景透明class,右上角購物車icon只占空間無底色 -->
+            <!-- 設計稿cart icon和badge是有一點重疊的,但是在html裡兩個都有佔空間無法重疊,需要用position絕對定位-->
+            <!-- 記得要去最上一層btn-cart裡面下relative-->
+            <span class="badge badge-pill badge-danger">12</span>
+        </button>
+        <!-- dropdown-menu會自己計算空間不要跑出框架外,但在navbar除外,所以要自己另外下class-->
+        <div class="dropdown-menu text-secondary dropdown-menu-right" style="min-width:500px">
+            <form class="px-4 py-3">
+                <h6>已選購商品</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">刪除商品</th>
+                            <th scope="col">品項</th>
+                            <th scope="col">數量</th>
+                            <th scope="col">價格</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fas fa-trash-alt text-secondary d-flex justify-content-center"></td>
+                            <td>八星八箭0.1ct鑽純銀戒指</td>
+                            <td>1</td>
+                            <td class="justify-content-right">$7880</td>
+                        </tr>
+                        <tr>
+                            <td class="fas fa-trash-alt text-secondary d-flex justify-content-center"></td>
+                            <td>貓眼石玫瑰金可調式手環</td>
+                            <td>1</td>
+                            <td class="justify-content-right">$4880</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <button type="submit" class="btn btn-primary-chart btn-block text-white">Sign in</button>
+            </form>
+
+        </div>
+</nav>
+
+<!-- 動態廣告bannar--電商網站注重SEO,所以只能有一個H1,通常放在商品名稱,BANNAR的H1要拿掉-->
+<!-- d-flex align-items-end改變字體位置-->
+<div class="jumbotron jumbotron-fluid jumbotron-bg d-flex align-items-end">
+    <div class="container">
+        <div class="bg-ligter py-3 pl-3 text-center">
+            <h2 class="display-4">白色聖誕節寶石季</h2>
+            <p class="lead">以歐美風首飾為主,亦有小量民俗風(吉普賽.南美洲原住民飾品),人工寶石,天然寶石,水晶,高級訂製珠寶</p>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="demo">
+        <nav class="breadcrumb bg-white pl-0"><!-- pl-0對齊左邊-->
+            <a class="breadcrumb-item" href="#">Home</a>
+            <a class="breadcrumb-item" href="#">品牌珠寶</a>
+            <a class="breadcrumb-item" href="#">24k金</a>
+            <a class="breadcrumb-item active">雅典娜手鍊</as>
+        </nav>
+    </div>
+
+    <div class="row">
+ <div class="col-md-5">
+    <h1 class="gold">Athens 24k Golden Bracelet</h1>
+    <div class="d-flex justify-content-between text-w align-items-baseline ">
+        <span class=" text-secondary">售價$12,800</span>
+        <span class="discount text-danger font-weight-bold">聖誕優惠$8,800</span>
+       
+    </div>
+    <hr class="hr-g">
+    <div class="d-flex justify-content-between ">
+        <p class="pr-3 mt-2 h5">size</p>
+        
+        <div class="btn-group  " role="group" aria-label="Basic example">
+        
+            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top"
+                title="適合15-16cm的腕圍">17cm</button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top"
+                title="適合17-18cm的腕圍">19cm</button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top"
+                title="適合19-20cm的腕圍">21cm</button>
+        </div>
+    </div>
+    
+    
+
+<div class="input-group text-w pt-3">
+    <select class="custom-select text-w " id="inputGroupSelect04" aria-label="Example select with button addon">
+        <option selected>Choose...</option>
+        <option value="1">One pices</option>
+        <option value="2">Two pices</option>
+        <option value="3">Three pices</option>
+    </select>
+    <button type="button" class="btn btn-dark ml-1 btn-primary-chart btn-hover">Add to cart</button>
+        </div>
+
+
+
+
+
+        
+
+
+        
+    </div>
+
+    <div class="col-md-7"></div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+    <div class="demo">
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+</body>
+</html>
