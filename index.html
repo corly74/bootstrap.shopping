@@ -9,123 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/d038f356df.js"></script>
-    <style>
-        body {
-            font-family: Microsoft JhengHei;
-        }
-
-        .btn-cart {
-            background-color: transparent;
-            position: relative;
-        }
-
-        .btn-cart .badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .btn-primary-chart {
-            background-color: #000000;
-
-        }
-
-        .btn-primary-chart:hover {
-            background-color: #7beadf;
-            box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
-            color: #000000 !important;
-        }
-
-        .text-pink {
-            color: #40E0D0 !important;
-        }
-
-        .bg-tiffany {
-            background-color: #ffffff !important;
-            color: #000000 !important;
-        }
-
-        .bg-tiffany:hover {
-            background-color: #7beadf !important;
-            ;
-            border: #7beadf !important;
-            color: #000000 !important;
-        }
-
-        .dropdown-menu-right {
-            right: 0;
-            left: auto;
-        }
-
-        .jumbotron-bg {
-            background-image: url(https://otherplanet.photo/wp-content/uploads/2018/02/diamond-jewelry-group-arrangement-with-ribbon-in-pinkish-tones.jpg);
-            background-size: cover;
-            background-position: center center;
-            min-height: 400px;
-        }
-
-        .bg-ligter {
-            background-color: rgba(64, 224, 208, .41);
-
-        }
-
-        @media (min-width: 576px) {
-            .card-pic {
-                height: 170px;
-                background-size: cover;
-                background-position: center center;
-            }
-        }
-
-        .box-shadow {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, .17);
-            transition: box-shadow .3s;
-        }
-
-        .box-shadow:hover {
-            box-shadow: 0 3px 10px rgba(64, 224, 208, .50);
-        }
-
-        .btn-hover:hover {
-            background-color: #7beadf;
-            color: #000000 !important;
-        }
-
-        .btn .disabled {
-            pointer-events: none;
-        }
-
-        .btn-f {
-            border-radius: 0;
-        }
-
-        .btn-f:hover {
-            background-color: #7beadf;
-            border: none;
-            color: black;
-        }
-
-        .show{
-            display: block;
-        }
-
-        /* Clear floats after rows */ 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.col-md-4{
-    display: none; /* Hide all elements by default */
-}
-
-.show {
-  display: block;
-}
-
-    </style>
+    
 </head>
 
 <body>
@@ -135,7 +21,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <i class="fas fa-gem  fa-2x mr-2 text-pink"></i>
-        <a class="navbar-brand text-pink disabled" href="#">ForeverDiamond</a>
+        <a class="navbar-brand text-pink" href="#">FoeverDiamond</a>
 
         <!-- header navbar 右上角購物車 含icon 數量badge-->
         <div class="dropdown ml-auto">
@@ -180,7 +66,7 @@
                     </table>
 
 
-                    <a href="https://corly74.github.io/bootstrap.shopping/bootstrap_shopping_cheakout.html"
+                    <a href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_cheakout.html?"
                         id="DownLoadAudio" target="_blank">
                         <button id="Submit6" class="btn btn-sm btn-primary-chart btn-block text-white" type="button"
                             onclick="openWin(@item.UserID,@item.AudioID)">
@@ -232,9 +118,9 @@
         <div class="row">
             <div class="col-md-3">
 
-                <div class="list-group sticky-top ">
+                <div class="list-group sticky-top  list-group-category ">
                     <a href="#pane-1" class="list-group-item list-group-item-action active bg-tiffany active"
-                        data-toggle="list" role="tab">
+                        data-toggle="list" role="tab" onclick="filterSelection('newproduct')">
                         品牌珠寶
                     </a>
                     <a href="#pane-4" class="list-group-item list-group-item-action bg-tiffany" data-toggle="list"
@@ -259,7 +145,7 @@
                     <div class="tab-pane active" id="pane-1" role="tabpanel">
 
                         <div class="row">
-                            <div class="col-md-4 mb-4">
+                            <div class="col-md-4 mb-4 newproduct">
 
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
@@ -292,7 +178,7 @@
                                     </div>
                                     <div class="card-footer border-top-0 bg-white">
                                         <a class="btn btn-primary-chart btn-block text-white btn-hover"
-                                            href="https://corly74.github.io/bootstrap.shopping/product.html"
+                                            href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html"
                                             target="_blank" role="button">購買去</a>
                                     </div>
                                 </div>
@@ -309,15 +195,15 @@
                                             height action.</p>
 
                                     </div>
-                                    <div class="card-footer border-top-0 bg-white text-center">
-                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                    <div class="card-footer border-top-0 bg-white d-flex justify-content-center ">
+                                        <div class="btn-group btn-group-width " role="group" aria-label="Basic example">
                                             <a class="btn btn-primary-chart text-white disabled" href="#" role="button"
                                                 target="_blank"><small>玫瑰金</small></a>
                                             <a class="btn btn-primary-chart text-white btn-hover "
-                                                href="https://corly74.github.io/bootstrap.shopping/product.html#"
+                                                href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html#"
                                                 role="button" target="_blank"><small>古銅金</small></a>
                                             <a class="btn btn-primary-chart text-white btn-hover "
-                                                href="https://corly74.github.io/bootstrap.shopping/product.html#"
+                                                href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html#"
                                                 role="button" target="_blank"><small>24k金</small></a>
 
                                         </div>
@@ -342,7 +228,7 @@
                                     </div>
                                     <div class="card-footer border-top-0 bg-white">
                                         <a class="btn btn-primary-chart btn-block text-white btn-hover"
-                                            href="https://corly74.github.io/bootstrap.shopping/product.html"
+                                            href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_product2.html"
                                             target="_blank" role="button">購買去</a>
                                     </div>
                                 </div>
@@ -407,8 +293,8 @@
                                             height action.</p>
 
                                     </div>
-                                    <div class="card-footer border-top-0 bg-white text-center">
-                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                    <div class="card-footer border-top-0 bg-white d-flex justify-content-center ">
+                                        <div class="btn-group btn-group-width " role="group" aria-label="Basic example">
                                             <a class="btn btn-primary-chart text-white disabled"
                                                 href="#"><small>Eu#3</small></a>
                                             <a class="btn btn-primary-chart text-white  btn-hover"
@@ -491,8 +377,8 @@
                                             additional content.</p>
 
                                     </div>
-                                    <div class="card-footer border-top-0 bg-white text-center">
-                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                    <div class="card-footer border-top-0 bg-white d-flex justify-content-center ">
+                                        <div class="btn-group btn-group-width " role="group" aria-label="Basic example">
                                             <a class="btn btn-primary-chart text-white btn-hover"
                                                 href="#"><small>0.5ct</small></a>
                                             <a class="btn btn-primary-chart text-white  btn-hover"
@@ -516,8 +402,8 @@
                                             height action.</p>
 
                                     </div>
-                                    <div class="card-footer border-top-0 bg-white text-center">
-                                        <div class="btn-group  " role="group" aria-label="Basic example">
+                                    <div class="card-footer border-top-0 bg-white d-flex justify-content-center ">
+                                        <div class="btn-group btn-group-width " role="group" aria-label="Basic example">
                                             <a class="btn btn-primary-chart text-white disabled"
                                                 href="#"><small>Eu#3</small></a>
                                             <a class="btn btn-primary-chart text-white  btn-hover"
@@ -571,7 +457,7 @@
 
 
                         <div class="row mt-4">
-                            <div class="col-md-4 mb-4 ring">
+                            <div class="col-md-4 mb-4 ring column">
 
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
@@ -590,11 +476,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 necklace">
+                            <div class="col-md-4 mb-4 necklace column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
-                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8466/large/boyfriend-necklace-cc-v2.png?1562615956"
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/9664/large/p52505556_Boyfriend_Necklace_YG_FRONT.png?1574549027"
                                         class="card-img-top card-pic" alt="...">
                                     <div class="card-body ">
                                         <h5 class="card-title">Wedjat Necklace</h5>
@@ -608,7 +494,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 ring">
+                            <div class="col-md-4 mb-4 ring column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
@@ -626,7 +512,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 necklace">
+                            <div class="col-md-4 mb-4 necklace column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
@@ -644,11 +530,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 ear">
+                            <div class="col-md-4 mb-4 ear column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
-                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8158/large/organic-pearl-hoops-cc.png?1559933502"
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/9673/large/p52704936_Organic_Pearl_Necklace_YG_FRONT.png?1574549439"
                                         class="card-img-top card-pic" alt="...">
                                     <div class="card-body ">
                                         <h5 class="card-title">Organic Pearl Earring </h5>
@@ -662,11 +548,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 ear">
+                            <div class="col-md-4 mb-4 ear column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
-                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/7830/large/cabochon-studs-cc.png?1559653910"
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/9880/large/p52705245_Turquoise_Line_Hoops_YG_both.png?1574628543"
                                         class="card-img-top card-pic" alt="...">
                                     <div class="card-body ">
                                         <h5 class="card-title">Lazurite Earring</h5>
@@ -680,11 +566,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 necklace">
+                            <div class="col-md-4 mb-4 necklace column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
-                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/7930/large/diamond-necklace-cc.png?1559658908"
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/7930/large/p000490_Diamond_Necklace_YG_FRONT.png?1574717954"
                                         class="card-img-top card-pic" alt="...">
                                     <div class="card-body ">
                                         <h5 class="card-title">Diamond Necklace</h5>
@@ -698,15 +584,15 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 ring">
+                            <div class="col-md-4 mb-4 ring column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
-                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8430/large/Wave_Ring_Blue-Side2.png?1561571928"
+                                    <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8036/large/duo-ring-cc.png?1559670429"
                                         class="card-img-top card-pic" alt="...">
                                     <div class="card-body ">
                                         <h5 class="card-title">Dewdrop Wave Ring</h5>
-                                        <p class="card-text">追加不斷纏繞式戒指,今年最HOT綠色輕寶石款,FOEVER DIAMOND總是流行快一步.</p>
+                                        <p class="card-text">追加不斷纏繞式戒指,今年最HOT款,FOEVER DIAMOND總是流行快一步.</p>
                             
                                     </div>
                                     <div class="card-footer border-top-0 bg-white">
@@ -716,7 +602,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4 ear">
+                            <div class="col-md-4 mb-4 ear column">
                             
                                 <div class="card  h-100 box-shadow ">
                                     <!--h-100 不管內文多長,所有card高度對齊-->
@@ -753,7 +639,7 @@
 
 
 
-
+    <script src="js/all.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -766,105 +652,7 @@
         crossorigin="anonymous"></script>
 </body>
 
-<script>
-    $(document).ready(function () {
-        $('#removeModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget) // 選則當初觸發事件的按鈕
-            var title = button.data('title') // 使用 data-* 來取得特定內容
 
-            var modal = $(this)
-            modal.find('.modal-title').text('確認' + title) // 寫入資料
-        })
-    });
-
-    $('myList').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-</script>
-
-
-
-<script>
-    $(function () {
-        $('#myList a:last-child').tab('show')
-    })
-</script>
-<!-- bootstrap使用按鈕連結網頁js-->
-<script type="text/javascript">
-    function openWin(userid, audioid) {
-        var obj = document.getElementById("DownLoadAudio");
-        obj.href = data.state;
-        obj.click();
-    }
-</script>
-
-<script>// 刪除 Modal 的script
-    $(document).ready(function () {
-
-
-        // 編輯的 Modal 事件 當#editModal被點擊必須去找到是哪一個btn去觸發,並將這個btn的deta title屬性取出來,寫在modal-title地方
-        $('#removeModal').on('show.bs.modal', function (event) {
-            var btn = $(event.relatedTarget);
-
-            var title = btn.data('title')
-
-            var model = $(this);
-            model.find('.modal-title').text('確認刪除' + title)// '文字'+title=在title前面加上文字
-        });
-
-        $('#removeModal').on('show.bs.modal', function (event) {
-
-        })
-    });
-</script>
-
-<!-- Portfolio Gallery with Filtering切換不同分類照片-->
-<script>
-    filterSelection("all")
-    function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("col-md-4");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
-    }
-
-    function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-        }
-    }
-
-    function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-
-
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
-</script>
 
 </body>
 
