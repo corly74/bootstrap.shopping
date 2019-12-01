@@ -1,0 +1,151 @@
+body {
+    font-family: Microsoft JhengHei;
+}
+
+.btn-cart {
+    background-color: transparent;
+    position: relative;
+}
+
+.btn-cart .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-primary-chart {
+    background-color: #000000;
+
+}
+
+.btn-primary-chart:hover {
+    background-color: #7beadf;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
+    color: #000000 !important;
+}
+
+.text-pink {
+    color: #40E0D0 !important;
+}
+
+.bg-tiffany {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.bg-tiffany:hover {
+    background-color: #7beadf !important;
+    ;
+    border: #7beadf !important;
+    color: #000000 !important;
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.jumbotron-bg {
+    background-image: url(https://otherplanet.photo/wp-content/uploads/2018/02/diamond-jewelry-group-arrangement-with-ribbon-in-pinkish-tones.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 400px;
+}
+
+.bg-ligter {
+    background-color: rgba(64, 224, 208, .41);
+
+}
+
+@media (min-width: 576px) {
+    .card-pic {
+        height: 170px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .17);
+    transition: box-shadow .3s;
+}
+
+.box-shadow:hover {
+    box-shadow: 0 3px 10px rgba(64, 224, 208, .50);
+}
+
+.btn-hover:hover {
+    background-color: #7beadf;
+    color: #000000 !important;
+}
+
+.btn .disabled {
+    pointer-events: none;
+}
+
+.btn-f {
+    border-radius: 0;
+}
+
+.btn-f:hover {
+    background-color: #7beadf;
+    border: none;
+    color: black;
+}
+
+.show{
+    display: block;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.column {
+display: none; /* Hide all elements by default */
+}
+
+.show {
+display: block;
+}
+
+
+/*群組按鈕RWD*/
+
+
+
+
+
+@media (max-width: 991px) {
+    .btn-group-width> .btn  {
+         
+        padding: 0.25rem 0.5rem;
+  font-size: 0.775rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+      
+       
+     }
+ }
+
+ @media (max-width: 768px) {
+    .btn-group-width> .btn  {
+    
+   padding: 0.4rem 3.6rem;
+   font-size: 1.1rem;
+   line-height: 1.5;
+   border-radius: 0.2rem;
+ }
+ 
+ @media (max-width: 576px) {
+    .btn-group-width> .btn  {
+    
+   padding: 0.4rem 3rem;
+   font-size: 1.1rem;
+   line-height: 1.5;
+   border-radius: 0.2rem;
+ }
+
