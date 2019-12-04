@@ -749,15 +749,14 @@
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
-
-        document.querySelector('.list-group-category').addEventListener('click', function(e) {
-    if (e.target.nodeName == 'A') {
-      filterSelection("all")
-    }
-  })
     }
 </script>
-
+<script>
+document.querySelector('.list-group-category').addEventListener('click', function(e) {
+  if (e.target.nodeName == 'A') {
+   filterSelection("all")
+  }
+ })
 </body>
 
 </html>
