@@ -138,7 +138,7 @@ display: block;
    font-size: 1.1rem;
    line-height: 1.5;
    border-radius: 0.2rem;
- }
+ }}
  
  @media (max-width: 576px) {
     .btn-group-width> .btn  {
@@ -147,7 +147,7 @@ display: block;
    font-size: 1.1rem;
    line-height: 1.5;
    border-radius: 0.2rem;
- }
+ }}
 
 /*product.html css*/
 
