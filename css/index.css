@@ -149,3 +149,39 @@ display: block;
    border-radius: 0.2rem;
  }
 
+/*product.html css*/
+
+ .gold {
+    font-size: 24px;
+    width: 350px;
+    line-height: 1.5;
+}
+
+.text-w {
+    width: 300px;
+}
+
+.discount {
+    font-size: 26px;
+}
+
+.hr-g {
+    margin-top: 0;
+    width: 300px;
+    height: .1em;
+}
+
+
+.product-w {
+    width: 100px;
+}
+
+.seclectw {
+    width: 180px;
+}
+
+@media (max-width: 576px) {
+    .sm-right {
+        margin-right: 50px;
+    }
+}
