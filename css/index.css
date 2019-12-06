@@ -31,13 +31,20 @@ body {
 .bg-tiffany {
     background-color: #ffffff !important;
     color: #000000 !important;
+    border: 1px solid rgba(0,0,0,.125)!important;
 }
 
 .bg-tiffany:hover {
     background-color: #7beadf !important;
-    border: #7beadf !important;
-    color: #000000 !important;
+    border:1px solid #7beadf !important;
+   
+  
 }
+
+.bg-tiffany.active{
+    border: 1px solid #7beadf !important;
+}
+
 
 .dropdown-menu-right {
     right: 0;
