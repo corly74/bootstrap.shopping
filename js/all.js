@@ -1,4 +1,4 @@
-<script>
+
     $(document).ready(function () {
         $('#removeModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // 選則當初觸發事件的按鈕
@@ -13,11 +13,25 @@
         e.preventDefault()
         $(this).tab('show')
     })
-</script>
+
+
+
+
+
+    $(function () {
+        $('#myList a:last-child').tab('show')
+    })
+
+//bootstrap使用按鈕連結網頁js-->
+ type="text/javascript">
+    function openWin(userid, audioid) {
+        var obj = document.getElementById("DownLoadAudio");
+        obj.href = data.state;
+        obj.click();
+    }
+
 
 // 刪除 Modal 的script
-
-<script>
     $(document).ready(function () {
 
 
@@ -35,29 +49,10 @@
 
         })
     });
-</script>
 
 
+// Portfolio Gallery with Filtering切換不同分類照片-->
 
-<script>
-    $(function () {
-        $('#myList a:last-child').tab('show')
-    })
-</script>
-
-
-// bootstrap使用按鈕連結網頁js
-
-<script type="text/javascript">
-    function openWin(userid, audioid) {
-        var obj = document.getElementById("DownLoadAudio");
-        obj.href = data.state;
-        obj.click();
-    }
-</script>
-
-<!-- Portfolio Gallery with Filtering切換不同分類照片-->
-<script>
     filterSelection("all")
     function filterSelection(c) {
         var x, i;
@@ -103,12 +98,12 @@
 
         
     }
-</script>
 
-<script>
+
+
 document.querySelector('.list-group-category').addEventListener('click', function(e) {
   if (e.target.nodeName == 'A') {
    filterSelection("all")
   }
  })
-</script>
+
