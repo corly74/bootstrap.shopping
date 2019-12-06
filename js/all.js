@@ -107,3 +107,20 @@ document.querySelector('.list-group-category').addEventListener('click', functio
   }
  })
 
+//product.html js
+
+
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                    })
+              
+
+                    //滑鼠點擊縮圖 切換大圖片
+                    function myFunction(imgs) {
+                        var expandImg = document.getElementById("expandedImg");
+                        var imgText = document.getElementById("imgtext");
+                        expandImg.src = imgs.src;
+                        imgText.innerHTML = imgs.alt;
+                        expandImg.parentElement.style.display = "block";
+                    }
+             
