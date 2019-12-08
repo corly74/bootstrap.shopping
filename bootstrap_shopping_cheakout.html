@@ -9,129 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/d038f356df.js"></script>
     <style>
-        body {
-            font-family: Microsoft JhengHei;
-        }
+       
 
-        .btn-cart {
-            background-color: transparent;
-            position: relative;
-        }
+   
 
-        .btn-cart .badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .btn-primary-chart {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        .btn-primary-chart:hover {
-            background-color: #f2f2f2;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            color: #000000 !important;
-        }
-
-        .btn-chart{background-color: #000000;
-         color: #ffffff;}
-        .btn-chart:hover{background-color: #7beadf;
-            box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
-            color: #000000 !important;}
-
-        .text-pink {
-            color: #40E0D0 !important;
-        }
-
-        .bg-tiffany {
-            background-color: #ffffff !important;
-            color: #000000 !important;
-        }
-
-        .bg-tiffany:hover {
-            background-color: #7beadf !important;
-            border: #7beadf !important;
-            color: #000000 !important;
-        }
-
-        .dropdown-menu-right {
-            right: 0;
-            left: auto;
-        }
-
-        .jumbotron-bg {
-            background-image: url(https://otherplanet.photo/wp-content/uploads/2018/02/diamond-jewelry-group-arrangement-with-ribbon-in-pinkish-tones.jpg);
-            background-size: cover;
-            background-position: center center;
-            min-height: 400px;
-        }
-
-        .bg-ligter {
-            background-color: rgba(64, 224, 208, .41);
-        }
-
-        @media (min-width: 576px) {
-            .card-pic {
-                height: 170px;
-                background-size: cover;
-                background-position: center center;
-            }
-        }
-
-        .box-shadow {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, .17);
-            transition: box-shadow .3s;
-        }
-
-        .box-shadow:hover {
-            box-shadow: 0 3px 10px rgba(64, 224, 208, .50);
-        }
-
-        .btn-hover:hover {
-            background-color: #7beadf;
-            color: #000000 !important;
-            border: 0;
-        }
-
-        .gold {
-            font-size: 24px;
-            width: 350px;
-            line-height: 1.5;
-        }
-
-        .text-w {
-            width: 300px;
-        }
-
-        .discount {
-            font-size: 26px;
-        }
-
-        .hr-g {
-            margin-top: 0;
-            width: 300px;
-            height: .1em;
-        }
-
-        .product-w {
-            width: 100px;
-        }
-
-        .seclectw {
-            width: 220px;
-        }
-
-        .alert-radius {
-            border-radius: 50px;
-        }
-
-        .alert-radius:hover {
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
         
     </style>
 </head>
@@ -139,7 +23,7 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <i class="fas fa-gem  fa-2x mr-2 text-pink"></i>
-        <a class="navbar-brand text-pink" href="https://corly74.github.io/bootstrap.shopping/">ForeverDiamond</a>
+        <a class="navbar-brand text-pink" href="#">FoeverDiamond</a>
 
         <!-- header navbar 右上角購物車 含icon 數量badge-->
         <div class="dropdown ml-auto">
@@ -179,7 +63,7 @@
                         </tbody>
                     </table>
                         <a href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_cheakout.html?" id="DownLoadAudio"
-                            target="_blank">
+                            target="_blank" style=" text-decoration:none;">
                             <button id="Submit6" class="btn btn-chart btn-block text-white" type="button"
                                 onclick="openWin(@item.UserID,@item.AudioID)">
                                 <i class="glyphicon glyphicon-download-alt"></i>結帳</button></a>
@@ -222,12 +106,12 @@
                 </div>
             </div>
             <div class="col-12 col-sm text-center">
-                <div class="alert btn-primary-chart alert-radius" role="alert">
+                <div class="alert btn-cheakout-chart alert-radius" role="alert">
                     2.選擇金流付款
                 </div>
             </div>
             <div class="col-12 col-sm text-center">
-                <div class="alert btn-primary-chart alert-radius" role="alert">
+                <div class="alert btn-cheakout-chart alert-radius" role="alert">
                     3.完成
                 </div>
             </div>
@@ -266,7 +150,7 @@
                                         <tr class="">
                                             <td class=" text-secondary align-middle"><i class="fas fa-trash " data-toggle="modal" data-target="#removeModal" data-title="八星八箭0.1ct鑽純銀戒指" data-backdrop="static" href="#"></i></td>
                                             <td class=" ">
-                                                <img src="https://dto508s2j2p46.cloudfront.net/system/spree/products/8034/large/diamonds-team-ring-cc.png?1559670357"
+                                                <img src="img/BE1D0681_mt_75.jpg"
                                                     style="width:100px">
                                             </td>
                                             <td class="align-middle">八星八箭0.1ct鑽純銀戒指</td>
@@ -277,7 +161,7 @@
                                             <td class="align-middle text-secondary"><i class="fas fa-trash " data-toggle="modal" data-target="#removeModal" data-title="貓眼石玫瑰金可調式手環" data-backdrop="static" href="#"></i></td>
                                             <td class=""> 
                                                 <img
-                                                    src="https://dto508s2j2p46.cloudfront.net/system/spree/products/5937/large/diamondcluster_copy_copy.png?1541695084"
+                                                    src="img/duo-ring-cc-m.png"
                                                     style="width:100px"></td>
                                 
                                             <td class="align-middle">貓眼石玫瑰金可調式手環</td>
@@ -368,9 +252,9 @@
                                     </div>
                                 
 
-                                        <a href="https://corly74.github.io/bootstrap.shopping/bootstrap_shopping_payment.html" id="DownLoadAudio"
+                                        <a href="file:///D:/bootstrap-project/bootstrap_shopping%20page/bootstrap_shopping_payment.html?" id="DownLoadAudio"
                                             target="_blank" style=" text-decoration:none;>
-                                            <button id="Submit6" class="btn btn-chart btn-block" type="button" "
+                                            <button id="Submit6" class="btn btn-chart btn-block" type="button" 
                                                 onclick="openWin(@item.UserID,@item.AudioID)">
                                                 <i class="glyphicon glyphicon-download-alt"></i>下一步</button></a>
                                 </form>
@@ -389,82 +273,23 @@
 
 
 
+ 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+      <script src="js/all.js"></script>
 
-        <div class="demo">
-            <script>
-                $(function () {
-                    $('[data-toggle="tooltip"]').tooltip()
-                })
-            </script>
-
-            <script>
-                function myFunction(imgs) {
-                    var expandImg = document.getElementById("expandedImg");
-                    var imgText = document.getElementById("imgtext");
-                    expandImg.src = imgs.src;
-                    imgText.innerHTML = imgs.alt;
-                    expandImg.parentElement.style.display = "block";
-                }
-            </script>
-
-<script>// 刪除 Modal 的script
-    $(document).ready(function () {
+       
+         
 
 
-        // 編輯的 Modal 事件 當#editModal被點擊必須去找到是哪一個btn去觸發,並將這個btn的deta title屬性取出來,寫在modal-title地方
-        $('#removeModal').on('show.bs.modal', function (event) {
-            var btn = $(event.relatedTarget);
 
-            var title = btn.data('title')
-
-            var model = $(this);
-            model.find('.modal-title').text('確認刪除' + title)// '文字'+title=在title前面加上文字
-        });
-
-        $('#removeModal').on('show.bs.modal', function (event) {
-
-        })
-    });
-</script>
-<!-- 以下是表單驗證 -->
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
-
-<!-- bootstrap使用按鈕連結網頁js-->
-<script type="text/javascript">
-    function openWin(userid, audioid) {
-        var obj = document.getElementById("DownLoadAudio");
-        obj.href = data.state;
-        obj.click();
-    }
-</script>
 </body>
 
 </html>
