@@ -190,3 +190,34 @@ display: block;
         margin-right: 50px;
     }
 }
+
+
+/*bootstrap_shopping_cheakout.html css*/
+
+
+.btn-cheakout-chart {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-cheakout-chart:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #000000 !important;
+}
+
+.btn-chart{background-color: #000000;
+    color: #ffffff;}
+    
+.btn-chart:hover{background-color: #7beadf;
+ box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
+color: #000000 !important;}
+
+
+.alert-radius {
+    border-radius: 50px;
+}
+
+.alert-radius:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
