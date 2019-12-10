@@ -221,3 +221,30 @@ color: #000000 !important;}
 .alert-radius:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
+
+/*bootstrap_shopping_payment.html css */
+
+.btn-oder-chart {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-oder-chart:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #000000 !important;
+}
+
+
+
+
+.ok {
+    display: none;
+    position: absolute;
+    right: 0;
+}
+
+
+
+
+.credit:hover{background-color: #e6ffff;}
