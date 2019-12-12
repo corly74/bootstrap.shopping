@@ -163,5 +163,13 @@ document.querySelector('.list-group-category').addEventListener('click', functio
         }, false);
     })();
 
-              
+  
+//以下滑鼠移過打開v,滑鼠挪開取消v
+
+$(document).ready(function(){
+    $('.credit').click(function(){
+       $(this).find('.ok').toggleClass('checkIcon');
+    });
+  });
+  
             
