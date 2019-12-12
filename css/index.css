@@ -237,14 +237,19 @@ color: #000000 !important;}
 
 
 
-
-.ok {
+.credit .ok{
     display: none;
     position: absolute;
     right: 0;
-}
+  }
 
 
+.credit .checkIcon{
+    display: block;
+  }
 
+  .checkIcon{
+    display: block;
+  }
 
 .credit:hover{background-color: #e6ffff;}
